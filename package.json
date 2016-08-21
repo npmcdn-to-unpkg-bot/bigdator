@@ -1,0 +1,38 @@
+{
+  "name": "bigdator",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-eslint": "*",
+    "babel-plugin-transform-class-properties": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-polyfill": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "babelify": "*",
+    "browserify": "*",
+    "eslint": "*",
+    "eslint-plugin-babel": "*",
+    "eslint-plugin-react": "*",
+    "exorcist": "*",
+    "uglify": "*",
+    "watchify": "*"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.0",
+    "bootstrap-sass": "^3.3.6",
+    "flux": "*",
+    "isomorphic-fetch": "*",
+    "leaflet": "0.7.7",
+    "lodash": "4.15.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-leaflet": "0.12.1"
+  },
+  "scripts": {
+    "start": "babel-node ./server/src/server.js",
+    "watch": "watchify ./frontend/js/index.js -t [ babelify ] -o ./frontend/build/app.js --debug --verbose",
+    "build": "NODE_ENV=production browserify js/app.js -t [ babelify ] --debug | exorcist build/app.js.map | uglifyjs -c > build/app.js"
+  }
+}

@@ -1,0 +1,11 @@
+#app{
+  width: 540px;
+  height: 400px;
+  background-color: red;
+  font-size: 30px;
+}
+
+.leaflet-container {
+    height: 400px;
+    width: 100%;
+}
