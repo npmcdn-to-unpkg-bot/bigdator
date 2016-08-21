@@ -5,7 +5,12 @@
   font-size: 30px;
 }
 
-.leaflet-container {
-    height: 400px;
-    width: 100%;
+#map1 {
+  height: 400px;
+  width: 100%;
+}
+
+#map2 {
+  height: 400px;
+  width: 100%;
 }

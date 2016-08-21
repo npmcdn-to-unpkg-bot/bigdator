@@ -1,3 +1,6 @@
+export const JSON_LOADED = 'json loaded'
+
+
 export const SLIDER_BUSY = 'sliderBusy'
 export const SLIDER_CHANGE = 'sliderChange'
 

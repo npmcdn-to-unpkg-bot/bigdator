@@ -1,12 +1,23 @@
 import AppDispatcher from './app_dispatcher'
 import settings from '../settings'
-import * as ActionTypes from '../flux/action_types'
+import * as ActionTypes from './action_types'
+import {fetchJSON} from '../fetch_helpers'
 
 
 export default {
 
   init(){
-
+    fetchJSON('./data/buurten-schiedam.topojson')
+    .then(
+      json => {
+        AppDispatcher.dispatch({
+          type: ActionTypes.JSON_LOADED,
+          payload: {
+            json
+          }
+        })
+      }
+    )
   },
 
   /**

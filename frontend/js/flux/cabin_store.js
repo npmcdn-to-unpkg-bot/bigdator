@@ -31,6 +31,13 @@ class CabinStore extends ReduceStore{
   reduce(state, action) {
 
     switch(action.type){
+
+      case types.JSON_LOADED:
+        return {
+          ...state,
+          json: action.payload.json,
+        }
+
       case types.CABIN_HEIGHT:
       case types.CABIN_WIDTH:
       case types.CABIN_DEPTH:
