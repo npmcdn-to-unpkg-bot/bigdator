@@ -1,7 +1,7 @@
-var verzamelcontainer = {
+{
 "type": "FeatureCollection",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-                                                                                
+
 "features": [
 { "type": "Feature", "properties": { "unieknr": null, "locatie": "WESTVEST", "thv": "112", "nummer": null, "soort": "PLASTIC", "maximum aantal stortingen": null, "trommel (liter)": null, "capaciteit (m3)": null }, "geometry": { "type": "Point", "coordinates": [ 4.393361, 51.917088 ] } },
 { "type": "Feature", "properties": { "unieknr": null, "locatie": "HERENSTRAAT", "thv": null, "nummer": null, "soort": "PLASTIC", "maximum aantal stortingen": null, "trommel (liter)": null, "capaciteit (m3)": null }, "geometry": { "type": "Point", "coordinates": [ 4.400748, 51.918742 ] } },

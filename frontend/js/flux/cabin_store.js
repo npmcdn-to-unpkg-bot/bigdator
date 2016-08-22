@@ -35,7 +35,7 @@ class CabinStore extends ReduceStore{
       case types.JSON_LOADED:
         return {
           ...state,
-          json: action.payload.json,
+          mapdata: action.payload.mapdata,
         }
 
       case types.CABIN_HEIGHT:

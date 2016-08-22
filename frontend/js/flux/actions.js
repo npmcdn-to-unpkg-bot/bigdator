@@ -1,13 +1,29 @@
 import AppDispatcher from './app_dispatcher'
 import settings from '../settings'
 import * as ActionTypes from './action_types'
-import {fetchJSON} from '../fetch_helpers'
-
+import {fetchJSON, fetchJSONFiles} from '../fetch_helpers'
 
 export default {
 
   init(){
-    fetchJSON('./data/buurten-schiedam.topojson')
+
+    let urls = settings.jsonFiles.map(url => {
+      return settings.baseUrl + url
+    })
+
+    fetchJSONFiles(urls)
+    .then(
+      mapdata => {
+        AppDispatcher.dispatch({
+          type: ActionTypes.JSON_LOADED,
+          payload: {
+            mapdata
+          }
+        })
+      }
+    )
+/*
+    fetchJSON(settings.baseUrl + settings.jsonFiles[0])
     .then(
       json => {
         AppDispatcher.dispatch({
@@ -18,6 +34,7 @@ export default {
         })
       }
     )
+*/
   },
 
   /**

@@ -34,6 +34,44 @@ export function fetchJSON(url){
   })
 }
 
+export function fetchJSONFiles(url_array){
+
+  return new Promise((resolve, reject) => {
+
+    let promises = []
+    let errors = []
+
+    url_array.forEach(url => {
+      promises.push(
+        fetch(url)
+        .then(status)
+        .then(json)
+        .then(data => {
+          return data
+        })
+        .catch(e => {
+          errors.push(url)
+          return null
+        })
+      )
+    })
+
+    Promise.all(promises)
+    .then(
+      data => {
+        let jsonFiles
+        jsonFiles = data.filter(file => {
+          return file !== null
+        })
+        resolve({jsonFiles, errors})
+      },
+      error => {
+        reject({error})
+      }
+    )
+  })
+}
+
 export function fetchArraybuffer(url){
   return new Promise((resolve, reject) => {
     // fetch(url, {

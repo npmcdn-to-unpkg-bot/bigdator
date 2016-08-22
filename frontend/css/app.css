@@ -1,16 +1,14 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 #app{
-  width: 540px;
-  height: 400px;
-  background-color: red;
-  font-size: 30px;
 }
 
-#map1 {
-  height: 400px;
+
+#map {
+  height: 100%;
   width: 100%;
 }
 
-#map2 {
-  height: 400px;
-  width: 100%;
-}
